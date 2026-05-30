@@ -37,7 +37,7 @@ jobs:
         run: echo "COMMIT_HASH=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
 
       - name: Build with Gradle
-        run: ./gradlew assembleDebug && mv app/build/outputs/apk/release/*.apk app/taskmanager-${{ env.COMMIT_HASH }}.apk
+        run: ./gradlew assembleDebug && mv app/build/outputs/apk/debug/*.apk app/taskmanager-${{ env.COMMIT_HASH }}.apk
         env:
           KEYSTORE_FILE: /tmp/xed.keystore
           SIGNING_PROPERTIES_FILE: /tmp/signing.properties
